@@ -4,7 +4,6 @@ var _3s3sObject =
 		"ameblo.jp",
 		"kasparov.ru",
 		"grani.ru",
-		"lostfilm.tv",
 		"topix.com",
 		"directadvert.ru",
 		"censor.net.ua",
@@ -271,48 +270,58 @@ var _3s3sObject =
 		var initReferrer = document.referrer+"";
 		var initURL = document.URL+"";
 		
-		Object.defineProperty(document, "domain", {
-			get: function()
-			{
-				var nPos1 = initDomain.indexOf("h_t_t_p_s.");
-				var nPos2 = initDomain.indexOf("." + _3s3sObject.workProxy);
-				
-				if (nPos2 == -1)
-					return initDomain;
+		if (!Object.defineProperty)
+		{
+			document.referrer = initReferrer.replace("."+_3s3sObject.workProxy, '');
+			document.URL = initURL.replace("."+_3s3sObject.workProxy, '');
+		}
+		else
+		{
+			Object.defineProperty(document, "domain", {
+				get: function()
+				{
+					var nPos1 = initDomain.indexOf("h_t_t_p_s.");
+					var nPos2 = initDomain.indexOf("." + _3s3sObject.workProxy);
 					
-				var strLeft = initDomain.substring(0, nPos2);
+					if (nPos2 == -1)
+						return initDomain;
+						
+					var strLeft = initDomain.substring(0, nPos2);
+					
+					if (nPos1 == -1)
+						return strLeft;
+					
+					return strLeft.substring(10);
+				},
+				set: function(newValue) 
+				{
+					return newValue+"." + _3s3sObject.workProxy;
+				}, 
+				configurable: false });
 				
-				if (nPos1 == -1)
-					return strLeft;
-				
-				return strLeft.substring(10);
-			},
-			set: function(newValue) 
-			{
-				return newValue+"." + _3s3sObject.workProxy;
-			}, 
-			configurable: false });
+			Object.defineProperty(document, "referrer", {
+				get: function()
+				{
+					return initReferrer.replace("."+_3s3sObject.workProxy, '');
+				},
+				set: function(newValue) 
+				{
+					return newValue;
+				}, 
+				configurable: false });
+			Object.defineProperty(document, "URL", {
+				get: function()
+				{
+					return initURL.replace("."+_3s3sObject.workProxy, '');
+				},
+				set: function(newValue) 
+				{
+					return newValue;
+				}, 
+				configurable: false });
 			
-		Object.defineProperty(document, "referrer", {
-			get: function()
-			{
-				return initReferrer.replace("."+_3s3sObject.workProxy, '');
-			},
-			set: function(newValue) 
-			{
-				return newValue;
-			}, 
-			configurable: false });
-		Object.defineProperty(document, "URL", {
-			get: function()
-			{
-				return initURL.replace("."+_3s3sObject.workProxy, '');
-			},
-			set: function(newValue) 
-			{
-				return newValue;
-			}, 
-			configurable: false });
+		}
+		
 		/*Object.defineProperty(window, "location", {
 			get: function()
 			{
