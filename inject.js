@@ -4,6 +4,7 @@ var _3s3sObject =
 		"ameblo.jp",
 		"kasparov.ru",
 		"grani.ru",
+		"glavcom.ua",
 		"topix.com",
 		"directadvert.ru",
 		"censor.net.ua",
