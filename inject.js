@@ -10,6 +10,7 @@ var _3s3sObject =
 		"censor.net.ua",
 		"vesti-ukr.com",
 		"navalny.com",
+		"szona.org",
 		"ficbook.net",
 		"ej.ru",
 		"vk.com",
