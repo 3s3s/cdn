@@ -17,7 +17,6 @@ var _3s3sObject =
 		"ok.ru",
 		"opensharing.org",
 		"800notes.com",
-		"www.youtube.com",
 		"www.facebook.com"
 		],
 	adNetworks: [
