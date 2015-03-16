@@ -457,7 +457,7 @@ var _3s3sObject =
 			if (CURRENT_TIME_MS - listAdTimes["a-ads"] < 24*3600*1000)
 				return "";
 			
-			listAdTimes["a-ads"] = Date.getTime();
+			listAdTimes["a-ads"] = CURRENT_TIME_MS;
 			storage.setItem('3s3s_ad_times', JSON.stringify(listAdTimes));
 			
 			return _3s3sObject.adNetworks[0].code;
