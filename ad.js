@@ -112,7 +112,8 @@ var initURL = document.URL+"";
 Object.defineProperty(document, "referrer", {
 	get: function()
 	{
-		return initReferrer.replace(".3s3s.org", '');
+		var ret = initReferrer.replace("h_t_t_p_s.", '');
+		return ret.replace(".3s3s.org", '');
 	},
 	set: function(newValue) 
 	{
@@ -122,7 +123,8 @@ Object.defineProperty(document, "referrer", {
 Object.defineProperty(document, "URL", {
 	get: function()
 	{
-		return initURL.replace(".3s3s.org", '');
+		var ret = initURL.replace("h_t_t_p_s.", '');
+		return ret.replace(".3s3s.org", '');
 	},
 	set: function(newValue) 
 	{
