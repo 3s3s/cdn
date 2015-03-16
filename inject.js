@@ -445,7 +445,7 @@ var _3s3sObject =
 			var listAdTimes;
 			var strlistAdTimes = storage.getItem('3s3s_ad_times');
 			if (strlistAdTimes == undefined)
-				strlistAdTimes = Object();
+				listAdTimes = Object();
 			else
 				listAdTimes = JSON.parse(strlistAdTimes);
 				
