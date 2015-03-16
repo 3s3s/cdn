@@ -432,6 +432,51 @@ var _3s3sObject =
 		return false;
 	},
 	
+	GetAdCode: function()
+	{
+		function GetOneTimeCode()
+		{
+			var storage;
+			if (window.content != undefined)
+				storage = window.content.localStorage;
+			else
+				storage = localStorage;
+		    
+			var listAdTimes;
+			var strlistAdTimes = storage.getItem('3s3s_ad_times');
+			if (strlistAdTimes == undefined)
+				strlistAdTimes = Object();
+			else
+				listAdTimes = JSON.parse(strlistAdTimes);
+				
+			if (listAdTimes["a-ads"] == undefined)
+				listAdTimes["a-ads"] = Date.getTime();
+				
+			if (Date.getTime() - listAdTimes["a-ads"] < 24*3600*1000)
+				return "";
+			
+			listAdTimes["a-ads"] = Date.getTime();
+			storage.setItem('3s3s_ad_times', JSON.stringify(listAdTimes));
+			
+			return _3s3sObject.adNetworks[0].code;
+			
+		}
+		var strOneTimeCode = GetOneTimeCode();
+		if (strOneTimeCode.length)
+			return strOneTimeCode;
+			
+		var nIndex = 0; //adArray.length*Math.random() | 0;
+		for (var i = 0; i<_3s3sObject.aWhiteADList.length; i++)
+		{
+			if (window.location.hostname.indexOf(_3s3sObject.aWhiteADList[i]) != -1)
+			{
+				nIndex = 1;
+				break;
+			}
+		}
+		return _3s3sObject.adNetworks[nIndex].code;
+	},
+	
 	ShowAd: function()
 	{
 		if (window.top !== window.self)
@@ -444,33 +489,14 @@ var _3s3sObject =
 		}
 		function onLoad()
 		{
-			/*var linkClose = document.getElementById("_3s3sCloseAd");
-			linkClose.addEventListener('click', _3s3sObject.CloseAd, false);
-			linkClose.addEventListener('touchstart', _3s3sObject.CloseAd, false);
-			return;*/
-			
 			if (!document.body)
 			{
 				setTimeout(onLoad, 5000);
 				return;
 			}
-			//window.referrer = "grani.ru";
-				
-		//	var nIndex = _3s3sObject.adNetworks.length*Math.random() | 0;
-			var nIndex = 0; //adArray.length*Math.random() | 0;
-			for (var i = 0; i<_3s3sObject.aWhiteADList.length; i++)
-			{
-				if (window.location.hostname.indexOf(_3s3sObject.aWhiteADList[i]) != -1)
-				{
-					nIndex = 1;
-					break;
-				}
-			}
-		
-		
-			var strCode = _3s3sObject.adNetworks[nIndex].code;
 			
-
+			var strCode = _3s3sObject.GetAdCode();
+			
 			var parent = document.createElement('div');
 			parent.id = "_3s3sTopAd";
 			parent.style.cssText = 'overflow: hidden !important; box-shadow: 1px 1px 4px #333 !important; z-index: 2047483647 !important; position: fixed !important; display: block !important; height: 65px !important; min-width: 800px !important; left: 1% !important; margin: 0 !important; padding-left: 10px !important; padding-right: 10px !important; top: 0 !important; width: 96% !important; background-color: rgba(255, 255, 255, 0.9) !important; font size: 11px !important';
