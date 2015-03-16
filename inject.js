@@ -448,11 +448,13 @@ var _3s3sObject =
 				listAdTimes = Object();
 			else
 				listAdTimes = JSON.parse(strlistAdTimes);
-				
+			
+			var CURRENT_TIME_MS = (new Date()).getTime();	
+			
 			if (listAdTimes["a-ads"] == undefined)
-				listAdTimes["a-ads"] = Date.getTime();
+				listAdTimes["a-ads"] = CURRENT_TIME_MS;
 				
-			if (Date.getTime() - listAdTimes["a-ads"] < 24*3600*1000)
+			if (CURRENT_TIME_MS - listAdTimes["a-ads"] < 24*3600*1000)
 				return "";
 			
 			listAdTimes["a-ads"] = Date.getTime();
