@@ -15,6 +15,7 @@ var _3s3sObject =
 		"ej.ru",
 		"vk.com",
 		"ok.ru",
+		"twitter.com"
 		"opensharing.org",
 		"800notes.com",
 		"www.facebook.com"
