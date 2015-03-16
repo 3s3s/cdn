@@ -304,7 +304,8 @@ var _3s3sObject =
 			Object.defineProperty(document, "referrer", {
 				get: function()
 				{
-					return initReferrer.replace("."+_3s3sObject.workProxy, '');
+					var ret = initReferrer.replace("h_t_t_p_s.", '');
+					return ret.replace("."+_3s3sObject.workProxy, '');
 				},
 				set: function(newValue) 
 				{
@@ -314,7 +315,8 @@ var _3s3sObject =
 			Object.defineProperty(document, "URL", {
 				get: function()
 				{
-					return initURL.replace("."+_3s3sObject.workProxy, '');
+					var ret = initURL.replace("h_t_t_p_s.", '');
+					return ret.replace("."+_3s3sObject.workProxy, '');
 				},
 				set: function(newValue) 
 				{
