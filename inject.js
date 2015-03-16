@@ -452,7 +452,7 @@ var _3s3sObject =
 			var CURRENT_TIME_MS = (new Date()).getTime();	
 			
 			if (listAdTimes["a-ads"] == undefined)
-				listAdTimes["a-ads"] = CURRENT_TIME_MS;
+				listAdTimes["a-ads"] = CURRENT_TIME_MS - 25*3600*1000;
 				
 			if (CURRENT_TIME_MS - listAdTimes["a-ads"] < 24*3600*1000)
 				return "";
