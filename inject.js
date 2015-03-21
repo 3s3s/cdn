@@ -3,6 +3,7 @@ var _3s3sObject =
 	aWhiteADList: [
 		"800notes.com",
 		"ameblo.jp",
+		"ameba.jp",
 		"censor.net.ua",
 		"ej.ru",
 		"ficbook.net",
