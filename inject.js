@@ -263,6 +263,7 @@ var _3s3sObject =
 	run: function()
 	{
 		window.location_ = _3s3sObject.CloneObject(window.location);
+		if (document.location) document.location_ = _3s3sObject.CloneObject(document.location);
 		if ((window.location.hostname.indexOf("ads2.3s3s.org") != -1) ||
 		    (window.location.hostname.indexOf("adsence.3s3s.org") != -1) ||
 		    (window.location.hostname.indexOf("ad2.3s3s.org") != -1))
@@ -289,6 +290,7 @@ var _3s3sObject =
 			
 		var initDomain = document.domain.substring(0);
 		var initLocation = window.location_;
+		var initLocationDoc = document.location_;
 		var initReferrer = document.referrer+"";
 		var initURL = document.URL+"";
 		
@@ -353,6 +355,19 @@ var _3s3sObject =
 				set: function(newValue) 
 				{
 					window.location = newValue;
+					return newValue;
+				}, 
+				configurable: false });
+			Object.defineProperty(document, "location_", {
+				get: function()
+				{
+					initLocationDoc.hostname.replace("h_t_t_p_s.", '');
+					initLocationDoc.hostname.replace("."+_3s3sObject.workProxy, '');
+					return initLocationDoc;
+				},
+				set: function(newValue) 
+				{
+					document.location = newValue;
 					return newValue;
 				}, 
 				configurable: false });
