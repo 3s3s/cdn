@@ -245,13 +245,15 @@ var _3s3sObject =
 	CloneObject: function (obj)
 	{
 		var copy;
+		if (null == obj || "object" != typeof obj) return obj;
+		
 		if (obj instanceof Object)
 		{
 	        	copy = {};
 	        	for (var attr in obj)
 	        	{
 	            		if (obj.hasOwnProperty(attr))
-	            			copy[attr] = clone(obj[attr]);
+	            			copy[attr] = _3s3sObject.CloneObject(obj[attr]);
 	        	}
 	        	return copy;
 	    	}
