@@ -244,12 +244,19 @@ var _3s3sObject =
 	},
 	CloneObject: function (obj)
 	{
-	    if (null == obj || "object" != typeof obj) return obj;
-	    var copy = obj.constructor();
-	    for (var attr in obj) {
-	        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
-	    }
-	    return copy;
+		var copy;
+		if (obj instanceof Object)
+		{
+	        	copy = {};
+	        	for (var attr in obj)
+	        	{
+	            		if (obj.hasOwnProperty(attr))
+	            			copy[attr] = clone(obj[attr]);
+	        	}
+	        	return copy;
+	    	}
+	
+	    	throw new Error("Unable to copy obj! Its type isn't supported.");
 	},
 	run: function()
 	{
