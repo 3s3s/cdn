@@ -388,6 +388,24 @@ var _3s3sObject =
 					return newValue;
 				}, 
 				configurable: false });
+	        	for (var attr in window.location_) {
+	            		if (window.location_.hasOwnProperty(attr)) {
+					Object.defineProperty(window.location_, attr, {
+						set: function(newValue) {
+							window.location[attr] = newValue;
+							return newValue;
+						}, configurable: false });
+	            		}
+	        	}
+	        	for (var attr in document.location_) {
+	            		if (document.location_.hasOwnProperty(attr)) {
+					Object.defineProperty(document.location_, attr, {
+						set: function(newValue) {
+							document.location[attr] = newValue;
+							return newValue;
+						}, configurable: false });
+	            		}
+	        	}
 			
 		}
 		
