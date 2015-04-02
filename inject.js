@@ -348,9 +348,10 @@ var _3s3sObject =
 			Object.defineProperty(window, "location_", {
 				get: function()
 				{
-					initLocation.hostname.replace("h_t_t_p_s.", '');
-					initLocation.hostname.replace("."+_3s3sObject.workProxy, '');
-					return initLocation;
+					var ret = _3s3sObject.CloneObject(window.location);
+					ret.hostname = ret.hostname.replace("h_t_t_p_s.", '');
+					ret.hostname = ret.replace("."+_3s3sObject.workProxy, '');
+					return ret;
 				},
 				set: function(newValue) 
 				{
@@ -361,9 +362,10 @@ var _3s3sObject =
 			Object.defineProperty(document, "location_", {
 				get: function()
 				{
-					initLocationDoc.hostname.replace("h_t_t_p_s.", '');
-					initLocationDoc.hostname.replace("."+_3s3sObject.workProxy, '');
-					return initLocationDoc;
+					var ret = _3s3sObject.CloneObject(document.location);
+					ret.hostname = ret.hostname.replace("h_t_t_p_s.", '');
+					ret.hostname = ret.replace("."+_3s3sObject.workProxy, '');
+					return ret;
 				},
 				set: function(newValue) 
 				{
