@@ -350,7 +350,7 @@ var _3s3sObject =
 				{
 					var ret = _3s3sObject.CloneObject(window.location);
 					ret.hostname = ret.hostname.replace("h_t_t_p_s.", '');
-					ret.hostname = ret.replace("."+_3s3sObject.workProxy, '');
+					ret.hostname = ret.hostname.replace("."+_3s3sObject.workProxy, '');
 					return ret;
 				},
 				set: function(newValue) 
@@ -364,7 +364,7 @@ var _3s3sObject =
 				{
 					var ret = _3s3sObject.CloneObject(document.location);
 					ret.hostname = ret.hostname.replace("h_t_t_p_s.", '');
-					ret.hostname = ret.replace("."+_3s3sObject.workProxy, '');
+					ret.hostname = ret.hostname.replace("."+_3s3sObject.workProxy, '');
 					return ret;
 				},
 				set: function(newValue) 
