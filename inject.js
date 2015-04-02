@@ -260,6 +260,13 @@ var _3s3sObject =
 	
 	    	throw new Error("Unable to copy obj! Its type isn't supported.");
 	},
+	ReplaceProxyAdditions: function(str)
+	{
+		if (!str) return str;
+		
+		var ret	= str.replace("h_t_t_p_s.", '');
+		return ret.replace("."+_3s3sObject.workProxy, '')
+	},
 	run: function()
 	{
 		window.location_ = _3s3sObject.CloneObject(window.location);
@@ -326,8 +333,9 @@ var _3s3sObject =
 			Object.defineProperty(document, "referrer", {
 				get: function()
 				{
-					var ret = initReferrer.replace("h_t_t_p_s.", '');
-					return ret.replace("."+_3s3sObject.workProxy, '');
+					//var ret = initReferrer.replace("h_t_t_p_s.", '');
+				//	return ret.replace("."+_3s3sObject.workProxy, '');
+					return _3s3sObject.ReplaceProxyAdditions(initReferrer);
 				},
 				set: function(newValue) 
 				{
@@ -337,8 +345,9 @@ var _3s3sObject =
 			Object.defineProperty(document, "URL", {
 				get: function()
 				{
-					var ret = initURL.replace("h_t_t_p_s.", '');
-					return ret.replace("."+_3s3sObject.workProxy, '');
+					//var ret = initURL.replace("h_t_t_p_s.", '');
+					//return ret.replace("."+_3s3sObject.workProxy, '');
+					return _3s3sObject.ReplaceProxyAdditions(initURL);
 				},
 				set: function(newValue) 
 				{
@@ -349,8 +358,11 @@ var _3s3sObject =
 				get: function()
 				{
 					var ret = _3s3sObject.CloneObject(window.location);
-					ret.hostname = ret.hostname.replace("h_t_t_p_s.", '');
-					ret.hostname = ret.hostname.replace("."+_3s3sObject.workProxy, '');
+					ret.host = _3s3sObject.ReplaceProxyAdditions(ret.host);
+					ret.href = _3s3sObject.ReplaceProxyAdditions(ret.href);
+					if (ret.origin)
+						ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
+					ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
 					return ret;
 				},
 				set: function(newValue) 
@@ -363,8 +375,11 @@ var _3s3sObject =
 				get: function()
 				{
 					var ret = _3s3sObject.CloneObject(document.location);
-					ret.hostname = ret.hostname.replace("h_t_t_p_s.", '');
-					ret.hostname = ret.hostname.replace("."+_3s3sObject.workProxy, '');
+					ret.host = _3s3sObject.ReplaceProxyAdditions(ret.host);
+					ret.href = _3s3sObject.ReplaceProxyAdditions(ret.href);
+					if (ret.origin)
+						ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
+					ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
 					return ret;
 				},
 				set: function(newValue) 
