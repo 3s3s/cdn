@@ -388,7 +388,7 @@ var _3s3sObject =
 					return newValue;
 				}, 
 				configurable: false });
-	        	for (var attr in window.location_) {
+	        	/*for (var attr in window.location_) {
 	            		if (window.location_.hasOwnProperty(attr)) {
 					Object.defineProperty(window.location_, attr, {
 						set: function(newValue) {
@@ -405,7 +405,7 @@ var _3s3sObject =
 							return newValue;
 						}, configurable: false });
 	            		}
-	        	}
+	        	}*/
 			
 		}
 		
