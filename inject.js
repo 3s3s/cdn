@@ -29,21 +29,17 @@ var _3s3sObject =
 			host: "ads2.3s3s.org", 
 			code: "<iframe target='_blank' frameborder='0' src='http://ads2.3s3s.org' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		},
-		{
+		/*{
 			host: "3s3s.github.io",
 			code: "<iframe target='_blank' frameborder='0' src='http://3s3s.github.io/github.io/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
-		},
-	/*	{
+		},*/
+		{
 			host: "ad2.3s3s.org",
 			code: "<iframe target='_blank' frameborder='0' src='http://ad2.3s3s.org/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
-		},*/
+		},
 		{
 			host: "coinurl.com", 
 			code: '<iframe scrolling="no" style="border: 0; width: 468px; height: 60px;" src="//coinurl.com/get.php?id=35868"></iframe>'
-		},
-		{
-			host: "ad.3s3s.org", 
-			code: '<iframe scrolling="no" style="border: 0; width: 468px; height: 60px;" src="//ad.3s3s.org"></iframe>'
 		}
 		//	'<div id="_3s3s_no_change"><!-- Ad Unit [17990] grani.ru.3s3s.org-468x60-1 -->'+
 		//	'<div id="switch_placeholder_584d0961bba60196628d6ab63b857924" class="switch_placeholder"></div>'+
@@ -575,11 +571,6 @@ var _3s3sObject =
 			if (window.location.hostname.indexOf("lostfilm.tv") != -1)
 			{
 				nIndex = 2;
-				break;
-			}
-			if (window.location.hostname.indexOf("ficbook.net") != -1)
-			{
-				nIndex = 3;
 				break;
 			}
 		}
