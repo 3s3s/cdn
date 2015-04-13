@@ -561,14 +561,14 @@ var _3s3sObject =
 			
 		}
 		var strOneTimeCode = GetOneTimeCode();
-		if (strOneTimeCode.length)
-			return strOneTimeCode;
-			
+
 		var nIndex = 0; //adArray.length*Math.random() | 0;
 		for (var i = 0; i<_3s3sObject.aWhiteADList.length; i++)
 		{
 			if (window.location.hostname.indexOf(_3s3sObject.aWhiteADList[i]) != -1)
 			{
+				if (strOneTimeCode.length)
+					return strOneTimeCode;
 				nIndex = 1;
 				break;
 			}
