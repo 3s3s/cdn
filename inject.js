@@ -291,8 +291,8 @@ var _3s3sObject =
 			{
 				window.location[prop] = newValue;
 				return newValue;
-			}, 
-			configurable: false });
+			}
+		});
 	},
 	run: function()
 	{
@@ -396,8 +396,8 @@ var _3s3sObject =
 				{
 					window.location = newValue;
 					return newValue;
-				}, 
-				configurable: false });
+				}
+			});
 			Object.defineProperty(document, "location_", {
 				get: function()
 				{
@@ -413,8 +413,8 @@ var _3s3sObject =
 				{
 					document.location = newValue;
 					return newValue;
-				}, 
-				configurable: false });
+				}
+			});
 				
 			_3s3sObject.RedefineLocationProperty(window, "href");
 			_3s3sObject.RedefineLocationProperty(window, "host");
