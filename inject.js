@@ -435,7 +435,7 @@ var _3s3sObject =
 				{
 					var ret = _3s3sObject.CloneObject(obj.location);
 					ret["hostname"] = _3s3sObject.ReplaceProxyAdditions(ret["hostname"]);
-					return ret["hostname";
+					return ret["hostname"];
 				},
 				set: function(newValue) 
 				{
