@@ -415,28 +415,6 @@ var _3s3sObject =
 				}
 			});
 				
-			_3s3sObject.RedefineLocationProperty(window, "href");
-			_3s3sObject.RedefineLocationProperty(window, "host");
-			_3s3sObject.RedefineLocationProperty(window, "origin");
-			_3s3sObject.RedefineLocationProperty(window, "hostname");
-			_3s3sObject.RedefineLocationProperty(document, "href");
-			_3s3sObject.RedefineLocationProperty(document, "host");
-			_3s3sObject.RedefineLocationProperty(document, "origin");
-			_3s3sObject.RedefineLocationProperty(document, "hostname");
-
-			Object.defineProperty(window.location_, "hostname", {
-				get: function()
-				{
-					var ret = _3s3sObject.CloneObject(obj.location);
-					ret["hostname"] = _3s3sObject.ReplaceProxyAdditions(ret["hostname"]);
-					return ret["hostname"];
-				},
-				set: function(newValue) 
-				{
-					window.location["hostname"] = newValue;
-					return newValue;
-				}
-			});
 	        	/*for (var attr in window.location_) {
 	            		if (window.location_.hasOwnProperty(attr)) {
 					Object.defineProperty(window.location_, attr, {
