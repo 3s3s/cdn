@@ -40,6 +40,10 @@ var _3s3sObject =
 		{
 			host: "coinurl.com", 
 			code: '<iframe scrolling="no" style="border: 0; width: 468px; height: 60px;" src="//coinurl.com/get.php?id=35868"></iframe>'
+		},
+		{
+			host: "ad.a-ads.com",
+			code: "<iframe data-aa='65778' src='//ad.a-ads.com/65778?size=468x60' scrolling='no' style='width:468px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		}
 		//	'<div id="_3s3s_no_change"><!-- Ad Unit [17990] grani.ru.3s3s.org-468x60-1 -->'+
 		//	'<div id="switch_placeholder_584d0961bba60196628d6ab63b857924" class="switch_placeholder"></div>'+
@@ -571,6 +575,11 @@ var _3s3sObject =
 			if (window.location.hostname.indexOf("lostfilm.tv") != -1)
 			{
 				nIndex = 2;
+				break;
+			}
+			if (window.location.hostname.indexOf("cili.tv") != -1)
+			{
+				nIndex = 3;
 				break;
 			}
 		}
