@@ -277,19 +277,19 @@ var _3s3sObject =
 	},
 	RedefineLocationProperty: function(obj, prop)
 	{
-		if (!obj.location || !obj.location.prop)
+		if (!obj.location || !obj.location[prop])
 			return;
 			
 		Object.defineProperty(obj.location_, prop, {
 			get: function()
 			{
 				var ret = _3s3sObject.CloneObject(obj.location);
-				ret.prop = _3s3sObject.ReplaceProxyAdditions(ret.prop);
-				return ret.prop;
+				ret[prop] = _3s3sObject.ReplaceProxyAdditions(ret[prop]);
+				return ret[prop];
 			},
 			set: function(newValue) 
 			{
-				window.location.prop = newValue;
+				window.location[prop] = newValue;
 				return newValue;
 			}, 
 			configurable: false });
