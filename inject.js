@@ -275,24 +275,31 @@ var _3s3sObject =
 		var ret	= str.replace("h_t_t_p_s.", '');
 		return ret.replace("."+_3s3sObject.workProxy, '')
 	},
-	RedefineLocationProperty: function(obj, prop)
+	SetCloneLocation: function(ret)
 	{
-		if (!obj.location || !obj.location[prop])
-			return;
-			
-		Object.defineProperty(obj.location_, prop, {
-			get: function()
-			{
-				var ret = _3s3sObject.CloneObject(obj.location);
-				ret[prop] = _3s3sObject.ReplaceProxyAdditions(ret[prop]);
-				return ret[prop];
-			},
-			set: function(newValue) 
-			{
-				window.location[prop] = newValue;
-				return newValue;
-			}
-		});
+		ret.host = _3s3sObject.ReplaceProxyAdditions(ret.host);
+		ret.href = _3s3sObject.ReplaceProxyAdditions(ret.href);
+		ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
+		if (ret.origin)
+			ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
+
+		Object.defineProperty(ret, "host", {
+			set: function(newValue)	{
+				window.location.hostname = newValue;
+				return newValue; }});
+		Object.defineProperty(ret, "href", {
+			set: function(newValue)	{
+				window.location.hostname = newValue;
+				return newValue; }});
+		Object.defineProperty(ret, "hostname", {
+			set: function(newValue)	{
+				window.location.hostname = newValue;
+				return newValue; }});
+		if (ret.origin)
+			Object.defineProperty(ret, "origin", {
+				set: function(newValue)	{
+					window.location.hostname = newValue;
+					return newValue; }});
 	},
 	run: function()
 	{
@@ -385,19 +392,7 @@ var _3s3sObject =
 				get: function()
 				{
 					var ret = _3s3sObject.CloneObject(window.location);
-					ret.host = _3s3sObject.ReplaceProxyAdditions(ret.host);
-					ret.href = _3s3sObject.ReplaceProxyAdditions(ret.href);
-					if (ret.origin)
-						ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
-					ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
-					
-					Object.defineProperty(ret, "hostname", {
-						set: function(newValue)
-						{
-							window.location.hostname = newValue;
-							return newValue;
-						}
-					});
+					_3s3sObject.SetCloneLocation(ret);
 					return ret;
 				},
 				set: function(newValue) 
@@ -410,11 +405,7 @@ var _3s3sObject =
 				get: function()
 				{
 					var ret = _3s3sObject.CloneObject(document.location);
-					ret.host = _3s3sObject.ReplaceProxyAdditions(ret.host);
-					ret.href = _3s3sObject.ReplaceProxyAdditions(ret.href);
-					if (ret.origin)
-						ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
-					ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
+					_3s3sObject.SetCloneLocation(ret);
 					return ret;
 				},
 				set: function(newValue) 
