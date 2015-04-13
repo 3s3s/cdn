@@ -293,7 +293,7 @@ var _3s3sObject =
 				return newValue;
 			}, 
 			configurable: false });
-	}
+	},
 	run: function()
 	{
 		window.location_ = _3s3sObject.CloneObject(window.location);
