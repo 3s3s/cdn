@@ -275,6 +275,25 @@ var _3s3sObject =
 		var ret	= str.replace("h_t_t_p_s.", '');
 		return ret.replace("."+_3s3sObject.workProxy, '')
 	},
+	RedefineLocationProperty: function(obj, prop)
+	{
+		if (!obj.location || !obj.location.prop)
+			return;
+			
+		Object.defineProperty(obj.location_, prop {
+			get: function()
+			{
+				var ret = _3s3sObject.CloneObject(obj.location);
+				ret.prop = _3s3sObject.ReplaceProxyAdditions(ret.prop);
+				return ret.prop;
+			},
+			set: function(newValue) 
+			{
+				window.location.prop = newValue;
+				return newValue;
+			}, 
+			configurable: false });
+	}
 	run: function()
 	{
 		window.location_ = _3s3sObject.CloneObject(window.location);
@@ -396,6 +415,15 @@ var _3s3sObject =
 					return newValue;
 				}, 
 				configurable: false });
+				
+			_3s3sObject.RedefineLocationProperty(window, "href");
+			_3s3sObject.RedefineLocationProperty(window, "host");
+			_3s3sObject.RedefineLocationProperty(window, "origin");
+			_3s3sObject.RedefineLocationProperty(window, "hostname");
+			_3s3sObject.RedefineLocationProperty(document, "href");
+			_3s3sObject.RedefineLocationProperty(document, "host");
+			_3s3sObject.RedefineLocationProperty(document, "origin");
+			_3s3sObject.RedefineLocationProperty(document, "hostname");
 	        	/*for (var attr in window.location_) {
 	            		if (window.location_.hasOwnProperty(attr)) {
 					Object.defineProperty(window.location_, attr, {
