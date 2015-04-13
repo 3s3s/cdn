@@ -390,6 +390,11 @@ var _3s3sObject =
 					if (ret.origin)
 						ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
 					ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
+					
+					_3s3sObject.RedefineLocationProperty(window, "href");
+					_3s3sObject.RedefineLocationProperty(window, "host");
+					_3s3sObject.RedefineLocationProperty(window, "origin");
+					_3s3sObject.RedefineLocationProperty(window, "hostname");
 					return ret;
 				},
 				set: function(newValue) 
