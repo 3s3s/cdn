@@ -280,7 +280,7 @@ var _3s3sObject =
 		if (!obj.location || !obj.location.prop)
 			return;
 			
-		Object.defineProperty(obj.location_, prop {
+		Object.defineProperty(obj.location_, prop, {
 			get: function()
 			{
 				var ret = _3s3sObject.CloneObject(obj.location);
