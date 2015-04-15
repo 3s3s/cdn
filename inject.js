@@ -614,7 +614,7 @@ var _3s3sObject =
 				"<table style='word-break: keep-all !important; width: 100% !important; height: 100% !important; font-size: 12px !important'><tr style='vertical-align: center !important; height: 65px !important'>" +
 					"<td style='valign: top !important; vertical-align: top !important;'><span style='color: #005689 !important; cursor: pointer !important;' id='_3s3sCloseAd' title='close ad'>close</span></td>" +
 					"<td style='width: 100% !important; height: 100% !important; text-align: center !important; vertical-align: top !important;'>" +
-					strCode + "<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3.3s3s.org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>" + "</td>"+
+					strCode + "<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>" + "</td>"+
 					"<td style='vertical-align: top !important;'><a style='color: #005689 !important;' href='mailto:ivanivanovkzv@gmail.com?subject=Offer of cooperation (AD 3s3s.org)'>Advertise on 3s3s.org</a></td>"+
 				"</tr></table>";
 			document.body.appendChild(parent);
