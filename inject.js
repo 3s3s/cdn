@@ -591,6 +591,8 @@ var _3s3sObject =
 	{
 		if (window.top !== window.self)
 			return;
+		if (window.location.hostname == "cur.lv")
+			return;
 
 		for (var i=0; i<_3s3sObject.adNetworks.length; i++)
 		{
