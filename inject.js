@@ -608,6 +608,7 @@ var _3s3sObject =
 			}
 			
 			var strCode = _3s3sObject.GetAdCode();
+			var ads3 = "<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>";
 			
 			var parent = document.createElement('div');
 			parent.id = "_3s3sTopAd";
@@ -616,9 +617,13 @@ var _3s3sObject =
 				"<table style='word-break: keep-all !important; width: 100% !important; height: 100% !important; font-size: 12px !important'><tr style='vertical-align: center !important; height: 65px !important'>" +
 					"<td style='valign: top !important; vertical-align: top !important;'><span style='color: #005689 !important; cursor: pointer !important;' id='_3s3sCloseAd' title='close ad'>close</span></td>" +
 					"<td style='width: 100% !important; height: 100% !important; text-align: center !important; vertical-align: top !important;'>" +
-					strCode + "<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>" + "</td>"+
+					strCode + ads3 + "</td>"+
 					"<td style='vertical-align: top !important;'><a style='color: #005689 !important;' href='mailto:ivanivanovkzv@gmail.com?subject=Offer of cooperation (AD 3s3s.org)'>Advertise on 3s3s.org</a></td>"+
 				"</tr></table>";
+				
+			if (window["locatio"+"n"].hostname.indexOf(_3s3sObject.workProxy) == -1)
+				parent.innerHTML = ads3;
+				
 			document.body.appendChild(parent);
 
 			var linkClose = document.getElementById("_3s3sCloseAd");
