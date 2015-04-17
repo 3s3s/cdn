@@ -542,6 +542,9 @@ var _3s3sObject =
 	
 	GetAdCode: function()
 	{
+		if (window["locatio"+"n"].hostname.indexOf(_3s3sObject.workProxy) == -1)
+			return _3s3sObject.adNetworks[1].code; //proxy mode
+
 		function GetOneTimeCode()
 		{
 			var storage;
