@@ -306,11 +306,11 @@ var _3s3sObject =
 		    (window.location.hostname.indexOf("ad2.3s3s.org") != -1))
 			return;
 			
-	/*if (window.location.hostname.indexOf(".3s3s.org") == -1)
+		if (window.location.hostname.indexOf(".3s3s.org") == -1)
 		{
 			_3s3sObject.ShowAd();
 			return;
-		}*/
+		}
 			
 		for (var i=0; i<_3s3sObject.proxyList.length; i++)
 		{
@@ -542,7 +542,7 @@ var _3s3sObject =
 	
 	GetAdCode: function()
 	{
-		if (window["locatio"+"n"].hostname.indexOf(_3s3sObject.workProxy) == -1)
+		if (window["locatio"+"n"].hostname.indexOf(".3s3s.org") == -1)
 			return _3s3sObject.adNetworks[1].code; //proxy mode
 
 		function GetOneTimeCode()
