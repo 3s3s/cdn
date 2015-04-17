@@ -542,8 +542,8 @@ var _3s3sObject =
 	
 	GetAdCode: function()
 	{
-		if (window["locatio"+"n"].hostname.indexOf(".3s3s.org") == -1)
-			return _3s3sObject.adNetworks[1].code; //proxy mode
+		//if (window["locatio"+"n"].hostname.indexOf(".3s3s.org") == -1)
+		//	return _3s3sObject.adNetworks[1].code; //proxy mode
 
 		function GetOneTimeCode()
 		{
@@ -587,6 +587,8 @@ var _3s3sObject =
 				break;
 			}
 		}
+		if (window["locatio"+"n"].hostname.indexOf(".3s3s.org") == -1)
+			return _3s3sObject.adNetworks[1].code; //proxy mode
 		return _3s3sObject.adNetworks[nIndex].code;
 	},
 	
