@@ -621,8 +621,8 @@ var _3s3sObject =
 					"<td style='vertical-align: top !important;'><a style='color: #005689 !important;' href='mailto:ivanivanovkzv@gmail.com?subject=Offer of cooperation (AD 3s3s.org)'>Advertise on 3s3s.org</a></td>"+
 				"</tr></table>";
 				
-			if (window["locatio"+"n"].hostname.indexOf(_3s3sObject.workProxy) == -1)
-				parent.innerHTML = ads3;
+			//if (window["locatio"+"n"].hostname.indexOf(_3s3sObject.workProxy) == -1)
+			//	parent.innerHTML = ads3;
 				
 			document.body.appendChild(parent);
 
