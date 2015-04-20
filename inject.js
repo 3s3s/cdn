@@ -613,7 +613,7 @@ var _3s3sObject =
 			}
 			
 			var strCode = _3s3sObject.GetAdCode();
-			var ads3 = "<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>";
+			var ads3 = "";//<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>";
 			
 			var parent = document.createElement('div');
 			parent.id = "_3s3sTopAd";
