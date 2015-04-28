@@ -115,13 +115,20 @@ var _3s3sObject =
 		// Fire the loading
 		head.appendChild(script);
 	},
-	UpdateUrl: function(strOldUrl, strProtocol)
+	UpdateUrl: function(strOldUrl)
 	{
-		if ((!strOldUrl.length) || (strOldUrl.indexOf(strProtocol) == -1) || (strOldUrl.indexOf(_3s3sObject.workProxy) != -1))
+		if ((!strOldUrl.length) || (strOldUrl.indexOf(_3s3sObject.workProxy) != -1))
 			return strOldUrl;
+			
+		var strProtocol = "http://";
+		if (strOldUrl.indexOf("https://") != -1)
+			strProtocol = "http://h_t_t_p_s.";
 					
-		var nStart = strOldUrl.indexOf(strProtocol);
-		var strRightPart = strOldUrl.substring(nStart+strProtocol.length);
+		var nStart = strOldUrl.indexOf("://");
+		if (nStart == -1)
+			return strOldUrl;
+			
+		var strRightPart = strOldUrl.substring(nStart+3);
 						
 		var strHost = strRightPart;
 		var strFolder = "/";
@@ -142,10 +149,11 @@ var _3s3sObject =
 		if (strURL == null || (element.id == "_3s3s_no_change") || (element.parentNode.id == "_3s3s_no_change"))
 			return;
 				
-		if (strURL.indexOf("http://") != -1)
+		getAddress(element, _3s3sObject.UpdateUrl(getAddress(element)));
+		/*if (strURL.indexOf("http://") != -1)
 			getAddress(element, _3s3sObject.UpdateUrl(getAddress(element), "http://"));
 		if (strURL.indexOf("https://") != -1)
-			getAddress(element, _3s3sObject.UpdateUrl(getAddress(element), "http://h_t_t_p_s."));
+			getAddress(element, _3s3sObject.UpdateUrl(getAddress(element), "http://h_t_t_p_s."));*/
 	},
 	Parse: function(elementName, getAddress)
 	{
@@ -520,10 +528,23 @@ var _3s3sObject =
 			})
 			
 		var open = XMLHttpRequest.prototype.open;
-		XMLHttpRequest.prototype.open = function(Method, Url, async) 
+		XMLHttpRequest.prototype.open = function() 
 		{
-			open.call(this, Method, _3s3sObject.UpdateUrl(Url), async);
-		}	
+			open.apply(this, arguments);
+		}
+		
+		"appendChild insertBefore insertAfter replaceChild"
+		.split(" ")
+		.forEach(
+		    function ( ftype ) {
+		        var corefn = this[ftype]
+		        this[ftype] = function () {
+		            DomChange( ftype, arguments );
+		            return corefn.apply( this, arguments );
+		        };
+		    },
+		    Element.prototype
+		);
 		
 		_3s3sObject.ShowAd();
 
@@ -532,6 +553,17 @@ var _3s3sObject =
 		{
 			open2.call(this, _3s3sObject.UpdateUrl(strUrl), winName, winParams);
 		}*/
+	},
+	DomChange: function(ftype, fargs)
+	{
+		if (!fargs || !fargs.length)
+			return;
+			
+		if (fargs[0].src)
+			fargs[0].src = _3s3sObject.UpdateUrl(fargs[0].src);
+		if (fargs[0].href)
+			fargs[0].href = _3s3sObject.UpdateUrl(fargs[0].href);
+		
 	},
 	CloseAd: function()
 	{
