@@ -539,7 +539,7 @@ var _3s3sObject =
 		    function ( ftype ) {
 		        var corefn = this[ftype]
 		        this[ftype] = function () {
-		            DomChange( ftype, arguments );
+		            _3s3sObject.DomChange( ftype, arguments );
 		            return corefn.apply( this, arguments );
 		        };
 		    },
