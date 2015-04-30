@@ -137,6 +137,9 @@ var _3s3sObject =
 		if (nSlash != -1)
 		{
 			strHost = strRightPart.substring(0, nSlash);
+			if (strHost.indexOf(":") > 0)
+				strHost = strHost.substring(0, strHost.indexOf(":"));
+				
 			strFolder = strRightPart.substring(nSlash);
 		}
 		strHost += "."+_3s3sObject.workProxy;
@@ -286,24 +289,36 @@ var _3s3sObject =
 		ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
 		if (ret.origin)
 			ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
-
+		
 		Object.defineProperty(ret, "host", {
 			set: function(newValue)	{
-				window.location.hostname = newValue;
+				if (newValue.indexOf("."+_3s3sObject.workProxy) == -1)
+				{
+					if (newValue.indexOf(":") == -1)
+						newValue += "."+_3s3sObject.workProxy;
+					else
+						newValue.replace(":", "."+_3s3sObject.workProxy+":");
+				}
+				window.location.host = newValue;
 				return newValue; }});
 		Object.defineProperty(ret, "href", {
 			set: function(newValue)	{
-				window.location.hostname = newValue;
+				window.location.href = _3s3sObject.UpdateUrl(newValue);
 				return newValue; }});
 		Object.defineProperty(ret, "hostname", {
 			set: function(newValue)	{
+				if (newValue.indexOf("."+_3s3sObject.workProxy) == -1)
+					newValue += "."+_3s3sObject.workProxy;
 				window.location.hostname = newValue;
 				return newValue; }});
 		if (ret.origin)
 			Object.defineProperty(ret, "origin", {
 				set: function(newValue)	{
-					window.location.hostname = newValue;
+					window.location.origin = newValue;
 					return newValue; }});
+		/*ret.assign = function(url) {
+		//	ret.href = url;	
+		}*/
 	},
 	run: function()
 	{
@@ -536,8 +551,6 @@ var _3s3sObject =
 		    Element.prototype
 		);
 		
-		_3s3sObject.ShowAd();
-
 		/*var open2 = window.prototype.open;
 		window.prototype.open = function(strUrl, winName, winParams)
 		{
