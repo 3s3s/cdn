@@ -398,11 +398,6 @@ var _3s3sObject =
 					var ret = _3s3sObject.CloneObject(window.location);
 					_3s3sObject.SetCloneLocation(ret);
 					return ret;
-				},
-				set: function(newValue) 
-				{
-					window.location = newValue;
-					return newValue;
 				}
 			});
 			Object.defineProperty(document, "location_", {
@@ -411,11 +406,6 @@ var _3s3sObject =
 					var ret = _3s3sObject.CloneObject(document.location);
 					_3s3sObject.SetCloneLocation(ret);
 					return ret;
-				},
-				set: function(newValue) 
-				{
-					document.location = newValue;
-					return newValue;
 				}
 			});
 				
