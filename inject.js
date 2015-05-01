@@ -316,9 +316,9 @@ var _3s3sObject =
 				set: function(newValue)	{
 					window.location.origin = newValue;
 					return newValue; }});
-		/*ret.assign = function(url) {
-		//	ret.href = url;	
-		}*/
+		ret.toString = function() {
+			return this.href;
+		}
 	},
 	run: function()
 	{
@@ -551,6 +551,7 @@ var _3s3sObject =
 		    Element.prototype
 		);
 		
+		_3s3sObject.ShowAd();
 		/*var open2 = window.prototype.open;
 		window.prototype.open = function(strUrl, winName, winParams)
 		{
