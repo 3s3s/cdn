@@ -286,7 +286,7 @@ var _3s3sObject =
 	{
 		var host = _3s3sObject.ReplaceProxyAdditions(ret.host);
 		var href = _3s3sObject.ReplaceProxyAdditions(ret.href);
-		var ostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
+		var hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
 		
 		var origin = 0;
 		if (ret.origin)
