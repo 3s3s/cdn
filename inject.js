@@ -284,13 +284,18 @@ var _3s3sObject =
 	},
 	SetCloneLocation: function(ret)
 	{
-		ret.host = _3s3sObject.ReplaceProxyAdditions(ret.host);
-		ret.href = _3s3sObject.ReplaceProxyAdditions(ret.href);
-		ret.hostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
+		var host = _3s3sObject.ReplaceProxyAdditions(ret.host);
+		var href = _3s3sObject.ReplaceProxyAdditions(ret.href);
+		var ostname = _3s3sObject.ReplaceProxyAdditions(ret.hostname);
+		
+		var origin = 0;
 		if (ret.origin)
-			ret.origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
+			origin = _3s3sObject.ReplaceProxyAdditions(ret.origin);
 		
 		Object.defineProperty(ret, "host", {
+			get: function() {
+				return host;
+			},
 			set: function(newValue)	{
 				if (newValue.indexOf("."+_3s3sObject.workProxy) == -1)
 				{
@@ -300,22 +305,43 @@ var _3s3sObject =
 						newValue.replace(":", "."+_3s3sObject.workProxy+":");
 				}
 				window.location.host = newValue;
-				return newValue; }});
+				return newValue; 
+			},
+			configurable: false
+		});
 		Object.defineProperty(ret, "href", {
+			get: function() {
+				return href;
+			},
 			set: function(newValue)	{
 				window.location.href = _3s3sObject.UpdateUrl(newValue);
-				return newValue; }});
+				return newValue; 
+			},
+			configurable: false
+		});
 		Object.defineProperty(ret, "hostname", {
+			get: function() {
+				return hostname;
+			},
 			set: function(newValue)	{
 				if (newValue.indexOf("."+_3s3sObject.workProxy) == -1)
 					newValue += "."+_3s3sObject.workProxy;
 				window.location.hostname = newValue;
-				return newValue; }});
+				return newValue; 
+			},
+			configurable: false
+		});
 		if (ret.origin)
 			Object.defineProperty(ret, "origin", {
+				get: function() {
+					return origin;
+				},
 				set: function(newValue)	{
 					window.location.origin = newValue;
-					return newValue; }});
+					return newValue; 
+				},
+				configurable: false
+			});
 		ret.toString = function() {
 			return this.href;
 		}
