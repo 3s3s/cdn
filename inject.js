@@ -208,13 +208,13 @@ var _3s3sObject =
 			{
 				alert("This is blacklisted site. \n\nWARNING: perhaps site owners spying on visitors and/or actively interact with the intelligence service\n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to anonymouse.org");
 				
-				window.location.href = "http://anonymouse.org/cgi-bin/anon-www.cgi/" + protocol+"//"+host;
+				window.location.href = "http://anonymouse.org/cgi-bin/anon-www.cgi/" + protocol+"//"+host+window.location.pathname;
 			}
 			if (_3s3sObject.blackList[i][2] == 1)
 			{
 				alert("This is blacklisted site. \n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to anonymouse.org");
 				
-				window.location.href = "http://anonymouse.org/cgi-bin/anon-www.cgi/" + protocol+"//"+host;
+				window.location.href = "http://anonymouse.org/cgi-bin/anon-www.cgi/" + protocol+"//"+host+window.location.pathname;
 			}
 			if (_3s3sObject.blackList[i][2] == 3)
 			{
