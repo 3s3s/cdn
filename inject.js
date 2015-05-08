@@ -452,40 +452,7 @@ var _3s3sObject =
 				}
 			});
 				
-	        	/*for (var attr in window.location_) {
-	            		if (window.location_.hasOwnProperty(attr)) {
-					Object.defineProperty(window.location_, attr, {
-						set: function(newValue) {
-							window.location[attr] = newValue;
-							return newValue;
-						}, configurable: false });
-	            		}
-	        	}
-	        	for (var attr in document.location_) {
-	            		if (document.location_.hasOwnProperty(attr)) {
-					Object.defineProperty(document.location_, attr, {
-						set: function(newValue) {
-							document.location[attr] = newValue;
-							return newValue;
-						}, configurable: false });
-	            		}
-	        	}*/
-			
 		}
-		
-		/*Object.defineProperty(window, "location", {
-			get: function()
-			{
-				console.log("3s3s get location");
-				return initLocation;
-			},
-			configurable: false });*/
-
-		/*var footer = document.createElement('a');
-		footer.id = "3s3s_footer";
-		footer.href = "http://www.3s3s.org";
-		footer.title = "Anonymoused by http://www.3s3s/org";
-		document.body.appendChild(footer);*/
 		
 		_3s3sObject.Parse('A', function(element, value) 
 			{
@@ -705,54 +672,6 @@ var _3s3sObject =
 		}
 		
 		setTimeout(onLoad, 5000);
-		/*if (window.addEventListener) {
-		  window.addEventListener('load', onLoad, false);
-		}
-		else if (window.attachEvent) {
-		  window.attachEvent('onload', onLoad );
-		}*/
-
-	},
-	
-	sendRequest: function(url,callback,postData) {
-	    var req = _3s3sObject.createXMLHTTPObject();
-	    if (!req) return;
-	    var method = (postData) ? "POST" : "GET";
-	    req.open(method,url,true);
-	    req.setRequestHeader('User-Agent','XMLHTTP/1.0');
-	    if (postData)
-	        req.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-	    req.onreadystatechange = function () {
-	        if (req.readyState != 4) return;
-	        if (req.status != 200 && req.status != 304) {
-	//          alert('HTTP error ' + req.status);
-	            return;
-	        }
-	        callback(req);
-	    }
-	    if (req.readyState == 4) return;
-	    req.send(postData);
-	},
-
-	XMLHttpFactories: [
-	    function () {return new XMLHttpRequest()},
-	    function () {return new ActiveXObject("Msxml2.XMLHTTP")},
-	    function () {return new ActiveXObject("Msxml3.XMLHTTP")},
-	    function () {return new ActiveXObject("Microsoft.XMLHTTP")}
-	],
-
-	createXMLHTTPObject: function() {
-	    var xmlhttp = false;
-	    for (var i=0;i<_3s3sObject.XMLHttpFactories.length;i++) {
-	        try {
-	            xmlhttp = _3s3sObject.XMLHttpFactories[i]();
-	        }
-	        catch (e) {
-	            continue;
-	        }
-	        break;
-	    }
-	    return xmlhttp;
 	}
 }
 _3s3sObject.run();
