@@ -29,10 +29,10 @@ var _3s3sObject =
 			host: "ads2.3s3s.org", 
 			code: "<iframe target='_blank' frameborder='0' src='http://ads2.3s3s.org' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		},
-		/*{
+		{
 			host: "3s3s.github.io",
 			code: "<iframe target='_blank' frameborder='0' src='http://3s3s.github.io/github.io/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
-		},*/
+		},
 		{
 			host: "ad2.3s3s.org",
 			code: "<iframe target='_blank' frameborder='0' src='http://ad2.3s3s.org/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
