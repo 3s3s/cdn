@@ -57,7 +57,6 @@ var _3s3sObject =
 		["ebay.co.uk", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["pages.ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["signin.ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
-		["www.paypal.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["infoseek.co.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
 		["infoseek.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
 		["internet-research.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
