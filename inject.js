@@ -219,9 +219,9 @@ var _3s3sObject =
 			}
 			if (_3s3sObject.blackList[i][2] == 2)
 			{
-				alert("This is blacklisted site. \n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to anonymouse.org");
+				alert("This is blacklisted site. \n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to blank page");
 				
-				window.location.href = "http://anonymouse.org";
+				window.location.href = "about:blank";
 			}
 			if (_3s3sObject.blackList[i][2] == 3)
 			{
