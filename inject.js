@@ -55,7 +55,7 @@ var _3s3sObject =
 		["security.ua", "Igor Prikhodko <admin@corp.security.ua>", 0],
 		["ebank.co.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
 		["ebay.co.uk", "DigitalOcean Support <abuse@digitalocean.com>", 1],
-		["ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
+		["ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 2],
 		["pages.ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["signin.ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["infoseek.co.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
@@ -216,6 +216,12 @@ var _3s3sObject =
 				alert("This is blacklisted site. \n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to anonymouse.org");
 				
 				window.location.href = "http://anonymouse.org/cgi-bin/anon-www.cgi/" + protocol+"//"+host+window.location.pathname;
+			}
+			if (_3s3sObject.blackList[i][2] == 2)
+			{
+				alert("This is blacklisted site. \n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to anonymouse.org");
+				
+				window.location.href = "http://anonymouse.org";
 			}
 			if (_3s3sObject.blackList[i][2] == 3)
 			{
