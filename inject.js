@@ -52,6 +52,7 @@ var _3s3sObject =
 	blackList: 
 	[
 		["yagoda-goji.com", "Aleksandr Litvinov <support@yagoda-goji.com>", 0], 
+		["kanjuzi.com", "Zhang Chao <648914043@qq.com>", 0], 
 		["security.ua", "Igor Prikhodko <admin@corp.security.ua>", 0],
 		["ebank.co.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
 		["ebay.co.uk", "DigitalOcean Support <abuse@digitalocean.com>", 1],
