@@ -206,7 +206,7 @@ var _3s3sObject =
 				host = window.location.hostname.substring(10, nPos-1)
 			}
 			
-			if (_3s3sObject.blackList[i][2] == 0)
+			/*if (_3s3sObject.blackList[i][2] == 0)
 			{
 				alert("This is blacklisted site. \n\nWARNING: perhaps site owners spying on visitors and/or actively interact with the intelligence service\n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to anonymouse.org");
 				
@@ -229,8 +229,9 @@ var _3s3sObject =
 				alert("This is blacklisted site. \n\nFor unblock this please contact to site admin: " +_3s3sObject.blackList[i][1]+ "\nNow you will by redirect to CORAL CDN");
 				
 				window.location.hostname = host + ".nyud.net";
-			}
+			}*/
 			
+			window.location.href = "http://3s3s.org/redirect_error.ssp?referer="+protocol+"//"+host+window.location.pathname;
 			break;
 		}
 		for (var i=0; i<_3s3sObject.RKN_List.length; i++)
