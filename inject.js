@@ -8,6 +8,7 @@ var _3s3sObject =
 		"ej.ru",
 		"ficbook.net",
 		"grani.ru",
+		"graniru.org",
 		"glavcom.ua",
 		"kasparov.ru",
 		"livejournal.com",
