@@ -607,8 +607,8 @@ var _3s3sObject =
 			if (listAdTimes["a-ads"] == undefined)
 				listAdTimes["a-ads"] = CURRENT_TIME_MS - 25*3600*1000;
 				
-			if (CURRENT_TIME_MS - listAdTimes["a-ads"] < 24*3600*1000)
-				return "";
+			//if (CURRENT_TIME_MS - listAdTimes["a-ads"] < 24*3600*1000)
+			//	return "";
 			
 			listAdTimes["a-ads"] = CURRENT_TIME_MS;
 			storage.setItem('3s3s_ad_times', JSON.stringify(listAdTimes));
