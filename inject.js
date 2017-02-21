@@ -55,7 +55,7 @@ var _3s3sObject =
 		["yagoda-goji.com", "Aleksandr Litvinov <support@yagoda-goji.com>", 0], 
 		["kanjuzi.com", "Zhang Chao <648914043@qq.com>", 1], 
 		["security.ua", "Igor Prikhodko <admin@corp.security.ua>", 0],
-		["tripadvisor.com", "MarkMonitor +1-301-545-4676", 0]
+		["tripadvisor.com", "MarkMonitor +1-301-545-4676", 0],
 		["ebank.co.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
 		["ebay.co.uk", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 2],
