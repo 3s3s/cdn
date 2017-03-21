@@ -362,6 +362,12 @@ var _3s3sObject =
 	},
 	run: function()
 	{
+		var dotLast = window.location.hostname.lastIndexOf('.');
+		var tmp = window.location.hostname.substr(0, dotLast);
+		var dotNext = tmp.lastIndexOf('.');
+		var proxyDNS = window.location.hostname.substr(dotNext+1);
+		_3s3sObject.proxyList[0] = proxyDNS;
+		
 		window.location_ = _3s3sObject.CloneObject(window.location);
 		if (document.location) document.location_ = _3s3sObject.CloneObject(document.location);
 		if ((window.location.hostname.indexOf("ads2.3s3s.org") != -1) ||
@@ -369,7 +375,7 @@ var _3s3sObject =
 		    (window.location.hostname.indexOf("ad2.3s3s.org") != -1))
 			return;
 			
-		if (window.location.hostname.indexOf(".3s3s.org") == -1)
+		if (window.location.hostname.indexOf("."+proxyDNS) == -1)
 		{
 			_3s3sObject.ShowAd();
 			return;
