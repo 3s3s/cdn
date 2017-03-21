@@ -380,7 +380,7 @@ var _3s3sObject =
 		    (window.location.hostname.indexOf("ad2.3s3s.org") != -1))
 			return;
 			
-		if (window.location.hostname.indexOf("."+proxyDNS) == -1)
+		if (window.location.hostname.indexOf("."+_3s3sObject.proxyList[0]) == -1)
 		{
 			_3s3sObject.ShowAd();
 			return;
