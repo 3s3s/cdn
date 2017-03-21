@@ -1,3 +1,12 @@
+function GetProxy()
+{
+	var dotLast = window.location.hostname.lastIndexOf('.');
+	var tmp = window.location.hostname.substr(0, dotLast);
+	var dotNext = tmp.lastIndexOf('.');
+	var proxyDNS = window.location.hostname.substr(dotNext+1);
+	return proxyDNS;
+}
+
 var _3s3sObject = 
 {
 	aWhiteADList: [
@@ -235,7 +244,7 @@ var _3s3sObject =
 				window.location.hostname = host + ".nyud.net";
 			}*/
 			
-			window.location.href = "http://3s3s.org/redirect_error.ssp?referer="+protocol+"//"+host+window.location.pathname;
+			window.location.href = "http://"+GetProxy()+"/redirect_error.ssp?referer="+protocol+"//"+host+window.location.pathname;
 			break;
 		}
 		for (var i=0; i<_3s3sObject.RKN_List.length; i++)
@@ -244,7 +253,7 @@ var _3s3sObject =
 				continue;
 			
 			var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-			xmlhttp.open("POST", "http://3s3s.org/make_short_url.ssp", false);
+			xmlhttp.open("POST", "http://"+GetProxy()+"/make_short_url.ssp", false);
 			xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 			
 			xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
@@ -254,7 +263,7 @@ var _3s3sObject =
 					if (data.result != true || data.short.length == 0)
 						return;
 						
-					window.location.href = "http://"+data.short[0]+".3s3s.org";
+					window.location.href = "http://"+data.short[0]+"."+GetProxy();
 				}
 			}	
 			xmlhttp.onerror = function (e)
@@ -362,11 +371,7 @@ var _3s3sObject =
 	},
 	run: function()
 	{
-		var dotLast = window.location.hostname.lastIndexOf('.');
-		var tmp = window.location.hostname.substr(0, dotLast);
-		var dotNext = tmp.lastIndexOf('.');
-		var proxyDNS = window.location.hostname.substr(dotNext+1);
-		_3s3sObject.proxyList[0] = proxyDNS;
+		_3s3sObject.proxyList[0] = GetProxy();
 		
 		window.location_ = _3s3sObject.CloneObject(window.location);
 		if (document.location) document.location_ = _3s3sObject.CloneObject(document.location);
