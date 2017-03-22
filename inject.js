@@ -1,3 +1,12 @@
+function GetProxy()
+{
+	var dotLast = window.location.hostname.lastIndexOf('.');
+	var tmp = window.location.hostname.substr(0, dotLast);
+	var dotNext = tmp.lastIndexOf('.');
+	var proxyDNS = window.location.hostname.substr(dotNext+1);
+	return proxyDNS;
+}
+
 var _3s3sObject = 
 {
 	aWhiteADList: [
@@ -27,16 +36,16 @@ var _3s3sObject =
 	//	{host: "www.booking.com", code: "<iframe width='468' height='60' scrolling='no' frameborder='0' name='banner' target='_blank' src='https://www.booking.com?aid=801965;tmpl=banners;size=468x60;lang=en;target_aid=801965;theme=minimal;label=banner'></iframe>"},
 		//{host: "ads2.3s3s.org", code: "<iframe target='_blank' frameborder='0' src='http://ads2.3s3s.org' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"},
 		{
-			host: "ads2.3s3s.org", 
-			code: "<iframe target='_blank' frameborder='0' src='http://ads2.3s3s.org' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
+			host: "raw.githubusercontent.com", 
+			code: "<iframe target='_blank' frameborder='0' src='https://raw.githubusercontent.com/3s3s/cdn/master/ad2.html' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		},
 		{
 			host: "3s3s.github.io",
 			code: "<iframe target='_blank' frameborder='0' src='http://3s3s.github.io/github.io/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		},
 		{
-			host: "ad2.3s3s.org",
-			code: "<iframe target='_blank' frameborder='0' src='http://ad2.3s3s.org/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
+			host: "raw.githubusercontent.com",
+			code: "<iframe target='_blank' frameborder='0' src='https://raw.githubusercontent.com/3s3s/cdn/master/googleads.html' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		}
 		//	'<div id="_3s3s_no_change"><!-- Ad Unit [17990] grani.ru.3s3s.org-468x60-1 -->'+
 		//	'<div id="switch_placeholder_584d0961bba60196628d6ab63b857924" class="switch_placeholder"></div>'+
@@ -55,11 +64,13 @@ var _3s3sObject =
 		["yagoda-goji.com", "Aleksandr Litvinov <support@yagoda-goji.com>", 0], 
 		["kanjuzi.com", "Zhang Chao <648914043@qq.com>", 1], 
 		["security.ua", "Igor Prikhodko <admin@corp.security.ua>", 0],
+		["tripadvisor.com", "MarkMonitor +1-301-545-4676", 0],
 		["ebank.co.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
 		["ebay.co.uk", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 2],
 		["pages.ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["paypal.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
+		["ok.ru", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["signin.ebay.com", "DigitalOcean Support <abuse@digitalocean.com>", 1],
 		["infoseek.co.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
 		["infoseek.jp", "Toshiharu Kaneko <toshiharu.kaneko@mail.rakuten.com>", 1],
@@ -233,7 +244,7 @@ var _3s3sObject =
 				window.location.hostname = host + ".nyud.net";
 			}*/
 			
-			window.location.href = "http://3s3s.org/redirect_error.ssp?referer="+protocol+"//"+host+window.location.pathname;
+			window.location.href = "http://"+GetProxy()+"/redirect_error.ssp?referer="+protocol+"//"+host+window.location.pathname;
 			break;
 		}
 		for (var i=0; i<_3s3sObject.RKN_List.length; i++)
@@ -242,7 +253,7 @@ var _3s3sObject =
 				continue;
 			
 			var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-			xmlhttp.open("POST", "http://3s3s.org/make_short_url.ssp", false);
+			xmlhttp.open("POST", "http://"+GetProxy()+"/make_short_url.ssp", false);
 			xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 			
 			xmlhttp.onreadystatechange = function() {//Call a function when the state changes.
@@ -252,7 +263,7 @@ var _3s3sObject =
 					if (data.result != true || data.short.length == 0)
 						return;
 						
-					window.location.href = "http://"+data.short[0]+".3s3s.org";
+					window.location.href = "http://"+data.short[0]+"."+GetProxy();
 				}
 			}	
 			xmlhttp.onerror = function (e)
@@ -360,6 +371,8 @@ var _3s3sObject =
 	},
 	run: function()
 	{
+		_3s3sObject.proxyList[0] = GetProxy();
+		
 		window.location_ = _3s3sObject.CloneObject(window.location);
 		if (document.location) document.location_ = _3s3sObject.CloneObject(document.location);
 		if ((window.location.hostname.indexOf("ads2.3s3s.org") != -1) ||
@@ -367,7 +380,7 @@ var _3s3sObject =
 		    (window.location.hostname.indexOf("ad2.3s3s.org") != -1))
 			return;
 			
-		if (window.location.hostname.indexOf(".3s3s.org") == -1)
+		if (window.location.hostname.indexOf("."+_3s3sObject.proxyList[0]) == -1)
 		{
 			_3s3sObject.ShowAd();
 			return;
