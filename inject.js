@@ -36,16 +36,16 @@ var _3s3sObject =
 	//	{host: "www.booking.com", code: "<iframe width='468' height='60' scrolling='no' frameborder='0' name='banner' target='_blank' src='https://www.booking.com?aid=801965;tmpl=banners;size=468x60;lang=en;target_aid=801965;theme=minimal;label=banner'></iframe>"},
 		//{host: "ads2.3s3s.org", code: "<iframe target='_blank' frameborder='0' src='http://ads2.3s3s.org' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"},
 		{
-			host: "ads2.3s3s.org", 
-			code: "<iframe target='_blank' frameborder='0' src='http://ads2.3s3s.org' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
+			host: "raw.githubusercontent.com", 
+			code: "<iframe target='_blank' frameborder='0' src='https://raw.githubusercontent.com/3s3s/cdn/master/ad2.html' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		},
 		{
 			host: "3s3s.github.io",
 			code: "<iframe target='_blank' frameborder='0' src='http://3s3s.github.io/github.io/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		},
 		{
-			host: "ad2.3s3s.org",
-			code: "<iframe target='_blank' frameborder='0' src='http://ad2.3s3s.org/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
+			host: "raw.githubusercontent.com",
+			code: "<iframe target='_blank' frameborder='0' src='https://raw.githubusercontent.com/3s3s/cdn/master/googleads.html' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		}
 		//	'<div id="_3s3s_no_change"><!-- Ad Unit [17990] grani.ru.3s3s.org-468x60-1 -->'+
 		//	'<div id="switch_placeholder_584d0961bba60196628d6ab63b857924" class="switch_placeholder"></div>'+
