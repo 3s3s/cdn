@@ -41,10 +41,6 @@ var _3s3sObject =
 		},
 		{
 			host: "3s3s.github.io",
-			code: "<iframe target='_blank' frameborder='0' src='http://3s3s.github.io/github.io/' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
-		},
-		{
-			host: "3s3s.github.io",
 			code: "<iframe target='_blank' frameborder='0' src='https://3s3s.github.io/cdn/googleads.html' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		}
 		//	'<div id="_3s3s_no_change"><!-- Ad Unit [17990] grani.ru.3s3s.org-468x60-1 -->'+
