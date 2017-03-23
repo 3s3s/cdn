@@ -77,7 +77,7 @@ var _3s3sObjectAD =
 		$(".ad_root").show();
 		$(".row").show();
 		
-		$("#main_content").load("http://adcontent.3s3s.org #mainDiv");
+		$("#main_content").load("https://3s3s.github.io/cdn/Content/Content1.html #mainDiv");
 		$(".content").show();
 	},
 	
