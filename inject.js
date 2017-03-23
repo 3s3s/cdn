@@ -371,9 +371,7 @@ var _3s3sObject =
 		
 		window.location_ = _3s3sObject.CloneObject(window.location);
 		if (document.location) document.location_ = _3s3sObject.CloneObject(document.location);
-		if ((window.location.hostname.indexOf("ads2.3s3s.org") != -1) ||
-		    (window.location.hostname.indexOf("adsence.3s3s.org") != -1) ||
-		    (window.location.hostname.indexOf("ad2.3s3s.org") != -1))
+		if (window.location.hostname.indexOf("3s3s.github.io") != -1)
 			return;
 			
 		if (window.location.hostname.indexOf("."+_3s3sObject.proxyList[0]) == -1)
