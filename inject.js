@@ -21,7 +21,7 @@ var _3s3sObject =
 		"glavcom.ua",
 		"kasparov.ru",
 		"livejournal.com",
-		"navalny.com"
+		"navalny.com",
 		"opensharing.org",
 		"szona.org",
 		"topix.com",
