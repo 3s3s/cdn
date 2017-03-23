@@ -37,7 +37,7 @@ var _3s3sObject =
 		//{host: "ads2.3s3s.org", code: "<iframe target='_blank' frameborder='0' src='http://ads2.3s3s.org' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"},
 		{
 			host: "3s3s.github.io", 
-			code: "<iframe target='_blank' frameborder='0' src='https://3s3s.github.io/cdn/ad2.html' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
+			code: "<iframe target='_blank' frameborder='0' src='https://3s3s.github.io/cdn/myads.html' scrolling='no' style='width:480px; height:70px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>"
 		},
 		{
 			host: "3s3s.github.io",
