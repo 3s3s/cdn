@@ -20,6 +20,7 @@ var _3s3sObject =
 		"graniru.org",
 		"glavcom.ua",
 		"kasparov.ru",
+		"kasp",
 		"livejournal.com",
 		"navalny.com",
 		"opensharing.org",
