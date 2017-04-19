@@ -13,6 +13,7 @@ var _3s3sObject =
 		"800notes.com",
 		"ameblo.jp",
 		"ameba.jp",
+		"audio-kniga.net",
 		"censor.net.ua",
 		"ej.ru",
 		"ficbook.net",
