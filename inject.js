@@ -585,7 +585,7 @@ var _3s3sObject =
 	},
 	CloseAd: function()
 	{
-		var elem = document.getElementById("_3s3sTopAd")
+		var elem = document.getElementById("_3s3sTopAd1")
 		elem.parentNode.removeChild(elem);
 		return false;
 	},
@@ -666,7 +666,7 @@ var _3s3sObject =
 			var ads3 = "";//<iframe target='_blank' frameborder='0' s"+"rc='http:/"+"/ads3"+".3s3s"+".org' scrolling='no' style='width:0px; height:0px; border:0px; padding:0;overflow:hidden' allowtransparency='true'></iframe>";
 			
 			var parent = document.createElement('div');
-			parent.id = "_3s3sTopAd";
+			parent.id = "_3s3sTopAd1";
 			parent.style.cssText = 'overflow: hidden !important; box-shadow: 1px 1px 4px #333 !important; z-index: 2047483647 !important; position: fixed !important; display: block !important; height: 65px !important; min-width: 800px !important; left: 1% !important; margin: 0 !important; padding-left: 10px !important; padding-right: 10px !important; top: 0 !important; width: 96% !important; background-color: rgba(255, 255, 255, 0.9) !important; font size: 11px !important';
 			parent.innerHTML = 
 				"<table style='word-break: keep-all !important; width: 100% !important; height: 100% !important; font-size: 12px !important'><tr style='vertical-align: center !important; height: 65px !important'>" +
